@@ -1,5 +1,5 @@
 import json
-
+import pesel as p
 studenci = {}
 
 def add(student,studenci,indeks):
@@ -41,6 +41,10 @@ while True:
         name = input("Imie studenta: ")
         surname = input("Nazwisko studenta: ")
         pesel = input("Podaj pesel: ")
+        p.pesel2str(pesel)
+        if p.validate_pesel(pesel):
+            print(p.get_birthday_from_pesel(pesel))
+            print(p.get_gender_from_pesel(pesel))
         location = input("Miejscowosc zamieszkania: ")
         student = {
         "imie": name,
